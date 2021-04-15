@@ -1,7 +1,5 @@
 package com.company.asquith;
 
-import java.util.*;
-
 public class Task implements Comparable<Task> {
     private String title;
     private String description;
@@ -26,7 +24,7 @@ public class Task implements Comparable<Task> {
         return priority;
     }
 
-    @Override
+    /*@Override
     public int compareTo(Task o) {
         if (priority == o.priority) {
             return 0;
@@ -35,7 +33,17 @@ public class Task implements Comparable<Task> {
         } else {
             return -1;
         }
+    }*/
+
+    @Override
+    public int compareTo(Task o) {
+        return Integer.compare(o.priority, priority);
     }
+
+    /*@Override
+    public int compareTo(Task o) {
+        return title.compareTo(o.title);
+    }*/
 
     @Override
     public String toString() {
